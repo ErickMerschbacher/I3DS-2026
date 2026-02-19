@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div id="App">
       <img
-        className="logo"
+        className="Logo"
         src={logo}
         alt="Logotipo da Netflix com fundo preto e letras vermelhas, representando a plataforma de streaming de filmes e séries"
       />
@@ -15,7 +15,10 @@ const App = () => {
         <input type="text" placeholder="Pesquise por filmes e séries..." />
         <img src={lupa} alt="Botão de ação para Pesquisa!" />
       </div>
-      <Rodape link="https://bybeauty.my.canva.site/highia">ErickMerschbacher</Rodape>
+
+      <Rodape link="https://bybeauty.my.canva.site/highia">
+        ErickMerschbacher
+      </Rodape>
     </div>
   );
 };
