@@ -1,11 +1,11 @@
 import React from "react";
 import "./Rodape.module.css";
 
-const Rodape = ({ children }) => {
+const Rodape = ({ link ,children }) => {
   return (
     <footer>
       <p>
-        Feito com 🫰🏻por <a href="https://github.com">{children}</a>
+        Feito com 🫰🏻por <a href={link}>{children}</a>
       </p>
     </footer>
   );

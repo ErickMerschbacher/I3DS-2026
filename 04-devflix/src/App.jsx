@@ -15,7 +15,7 @@ const App = () => {
         <input type="text" placeholder="Pesquise por filmes e séries..." />
         <img src={lupa} alt="Botão de ação para Pesquisa!" />
       </div>
-      <Rodape>ErickMerschbacher</Rodape>
+      <Rodape link="https://bybeauty.my.canva.site/highia">ErickMerschbacher</Rodape>
     </div>
   );
 };
