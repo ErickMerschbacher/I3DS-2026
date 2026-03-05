@@ -3,33 +3,33 @@
   --font-raleway: "Raleway", sans-serif;
 
   /* Light theme (padrão) */
-  --bg-primary: #f5f5f5;
+  --bg-gradient: linear-gradient(135deg, #FBF8EF 100%, #78b3ce 0%);
   --bg-secondary: #fff;
   --text-primary: #333;
   --text-secondary: #666;
   --text-placeholder: #a1a1a1;
-  --accent-color: #ff6b6b;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #3edbf0;
+  --shadow-color: #3EDBF0;
   --shadow: 0px 2px 8px var(--shadow-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark theme */
-    --bg-primary: #212426;
+    --bg-gradient: linear-gradient(135deg, #050E3C 100%, #4D2FB2 0%);
     --bg-secondary: #343739;
     --text-primary: #f5f5f5;
     --text-secondary: #f0f0f0;
     --text-placeholder: #a1a1a1;
-    --accent-color: #ffa500;
-    --shadow-color: rgba(0, 0, 0, 0.4);
+    --accent-color: #8100D1;
+    --shadow-color: #9929EA;
     --shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   }
 }
 
 body {
+  background: var(--bg-gradient);
   font-family: var(--font-raleway);
-  background: var(--bg-primary);
 
   color: var(--text-primary);
 
@@ -97,7 +97,7 @@ body {
   }
 }
 
-.empty{
+.empty {
   width: 100%;
   margin-top: 2rem;
   text-align: center;
@@ -105,7 +105,7 @@ body {
   color: var(--accent-color);
 }
 
-.container{
+.container {
   width: 100%;
   margin-top: 2rem;
   display: flex;
@@ -113,7 +113,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-
 
 @media screen and (max-width: 600px) {
   #App {
