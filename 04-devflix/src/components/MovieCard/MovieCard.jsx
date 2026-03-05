@@ -1,56 +1,41 @@
-import { useEffect, useState } from "react";
-import styles from "./MovieDescription.module.css";
+import { useState } from "react";
+import styles from "./MovieCard.module.css";
+import MovieDescription from "../MovieDescription/MovieDescription";
 
-const MovieDescription = (props) => {
-  const [movieDesc, setMovieDesc] = useState([]);
+const MovieCard = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // console.log(isModalOpen);
 
-  useEffect(() => {
-    fetch(`${props.apiUrl}&i=${props.movieID}`)
-      .then((response) => response.json())
-      .then((data) => setMovieDesc(data))
-      .catch((error) => console.error(error));
-  }, []);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
-    <div className={styles.modalBackdrop} onClick={props.click}>
-      <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.movieInfo}>
-          <img src={movieDesc.Poster} alt="" />
-
-          <button className={styles.btnClose} onClick={props.click}>
-            X
-          </button>
-
-          <div className={styles.movieType}>
-            <div>
-              <img src="/favicon.png" alt="" />
-              {movieDesc.Type}
-              <h1>{movieDesc.Title}</h1>
-              <a
-                href={`https://google.com/search?q=${encodeURIComponent(movieDesc.Title)}`}
-                target="_blank"
-              >
-                ▶️ Assistir
-              </a>
-            </div>
-          </div>
+    <>
+      <div className={styles.movie} onClick={toggleModal}>
+        <div>
+          <p>{props.Year}</p>
         </div>
-        <div className={styles.containerMisc}>
-          <div className={styles.containerFlex}>
-            Avaliação: {movieDesc.imdbRating} | Duração: {movieDesc.Runtime} |{" "}
-            {movieDesc.Released}
-          </div>
-          <div className={styles.containerFlex}>
-            <p>Elenco: {movieDesc.Actors}</p>
-            <p>Gênero: {movieDesc.Genre}</p>
-          </div>
+
+        <div>
+          <img src={props.Poster} alt={props.Title} />
         </div>
-        <div className={styles.desc}>
-          <p>Sinopse: {movieDesc.Plot}</p>
+
+        <div>
+          <span>{props.Type}</span>
+          <h3>{props.Title}</h3>
         </div>
       </div>
-    </div>
+
+      {isModalOpen && (
+        <MovieDescription
+          apiUrl={props.apiUrl}
+          movieID={props.imdbID}
+          click={toggleModal}
+        />
+      )}
+    </>
   );
 };
 
-export default MovieDescription;
+export default MovieCard;
