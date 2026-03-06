@@ -74,7 +74,7 @@ const App = () => {
         <h2 className="empty">😢 Filme não encontrado 😢</h2>
       )}
 
-      <Rodape link={"https://github.com/ProfCastello"}>ProfCastello</Rodape>
+      <Rodape link={"https://github.com/ErickMerschbacher"}>ErickMerschbacher</Rodape>
     </div>
   );
 };
