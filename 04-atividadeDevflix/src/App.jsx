@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-
 import logo from "./assets/SpecialStream.png";
 import lupa from "./assets/Lupa.png";
-
+import Switch from "./components/Switch/Switch";
 import Rodape from "./components/Rodape/Rodape";
 import MovieCard from "./components/MovieCard/MovieCard";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
+  const [isLight, setIsLight] = useState(false);
+
+  const toggleTheme = () => {
+    setIsLight((currentValue) => !currentValue);
+  };
 
   //Utilizando uma CHAVE de API do arquivo .env
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
@@ -31,8 +35,15 @@ const App = () => {
     fetchInitial();
   }, []);
 
+  useEffect(() => {
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(isLight ? "light" : "dark");
+  }, [isLight]);
+
   return (
     <div id="App">
+      <Switch troca={toggleTheme} isLight={isLight} />
+
       <img
         id="Logo"
         src={logo}

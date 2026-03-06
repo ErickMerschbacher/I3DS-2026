@@ -1,8 +1,8 @@
 :root {
-  /* :root -> variáveis de css no tema original projetado */
+
   --font-raleway: "Raleway", sans-serif;
 
-  /* Light theme (padrão) */
+  
   --bg-primary: #f5f5f5;
   --bg-secondary: #fff;
   --text-primary: #333;
@@ -33,7 +33,7 @@ body {
 
   color: var(--text-primary);
 
-  /* Efeito de transição */
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease;

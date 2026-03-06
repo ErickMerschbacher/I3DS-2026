@@ -57,7 +57,7 @@ const App = () => {
         </>
       </div>
 
-      <Rodape link={"https://github.com/MaykThomazete"}>MaykThomazete</Rodape>
+      <Rodape link={"https://github.com/ErickMerschbacher"}>Erick</Rodape>
     </div>
   );
 };
