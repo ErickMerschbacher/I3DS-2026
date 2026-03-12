@@ -1,0 +1,36 @@
+.navbar {
+  background-color: dimgrey;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  color: #ffffff;
+}
+& a {
+  padding: 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+& a:hover {
+  color: cadetblue;
+  background-color: dimgrey;
+}
+body {
+  background-color: darkgray;
+}
+
+.containerApp {
+  min-height: 88vh;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
