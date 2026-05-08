@@ -1,120 +1,96 @@
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import logo from './assets/logo.png'
+import dotaPng from './assets/dota-2.png'
+import valorantPng from './assets/valorant.png'
+import lolPng from './assets/league-of-legends.png'
+import csgoPng from './assets/counter-strike.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [] = useState(0)
 
   return (
     <>
+      
+<div className="header-container">
+  <img src={logo} className="logo" alt="Logo" />
+  <h2 className="title">DevSteam</h2>
+</div>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Buscar"
+            className="search"
+          />
+        </div>
+        <div className="cart">🛒</div>
+<h2>PROMOÇÕES</h2>
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+        <div className="promo">
+          <div className='game-card'>
+            <img src={lolPng} className="base" alt="LoL" />
+            <div className='info-box'>
+              <p>LEAGUE OF LEGENDS</p>
+            <div className='preco-container'>
+              <div className="discount-badge">-50%</div>
+              <span className='velho-preco'>R$ 100,00</span>
+              <span className='novo-preco'>R$ 50,00</span>
+              </div>
+              <button className='Compra' onClick={() => console.log('Adicionado!')}>
+                ADICIONAR AO CARRINHO
+              </button>
+
+            </div>
+           </div>
+
+             <div>
+              {/*CARD DOTA 2*/}
+              <div className='game-card'>
+              <img src={dotaPng} className="base" alt="Dota 2" />
+               <div className='info-box'>
+              <p>DOTA 2</p>
+             <div className='preco-container'>
+              <div className="discount-badge">-50%</div>
+              <span className='velho-preco'>R$ 100,00</span>
+              <span className='novo-preco'>R$ 50,00</span>
+              </div>
+               <button className='Compra' onClick={() => console.log('Adicionado!')}>
+                ADICIONAR AO CARRINHO
+              </button>
+              </div>
+              </div>
+
+</div>
+          {/*Card Valorant*/}
+              <div className='game-card'>
+                <img src={valorantPng} className="base" alt="Valorant" />
+                 <div className='info-box'>
+                  <p>VALORANT</p>
+                 <div className='preco-container'>
+                  <div className="discount-badge">-50%</div>
+              <span className='velho-preco'>R$ 100,00</span>
+              <span className='novo-preco'>R$ 50,00</span>
+              </div>
+              <button className='Compra' onClick={() => console.log('Adicionado!')}>
+                ADICIONAR AO CARRINHO
+              </button>   
+</div>
+
+              </div>
+          
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+        <div className='outros'>
+          <h3>OUTROS JOGOS</h3>
+
+          <img src={csgoPng} className='base' width="180" height="90" ></img>
+
+          <div></div> <img src={csgoPng} className='base' width="180" height="90" ></img>
+            <div></div> <img src={csgoPng} className='base' width="180" height="90" ></img>
+            <div></div> <img src={csgoPng} className='base' width="180" height="90" ></img>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+       
       </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }
